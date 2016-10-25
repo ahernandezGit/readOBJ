@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0132)file:///media/Montado/Academico/Computacion%20Cientifica/CompuGrafica/Modelagem%20Geometrica/testes/testes/test1%20(c%C3%B3pia).html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+	<style>
+		canvas { width: 100%; height: 100%; position: absolute;  z-index: 0; }
+        .overcanvas {
+                position: absolute;
+				top: 0px;
+                display: block;
+				width: 150px;
+				padding: 5px;
+				font-family: Monospace;
+				font-size: 13px;
+				text-align: left;
+				font-weight: bold;
+            z-index: 100;
+        }
+	</style>
+    
+	<script src="libs/three.js"></script>
+	<script src="libs/TrackballControls.js"></script>
+	<script src="libs/ThreeSetup.js"></script>
+    <script src="libs/hemesh.js"></script>
+    <script src="libs/d3.min.js"></script>
+    
+	</head>
+	<body>
+        
+        <div class="overcanvas"><br>
+        <p><input type="file" id="fileToLoad" ></p>
+        <label>Points's size </label> <input id="sizePointsBar" type="range" min="1" max="10" value="4" step="1" ><br/>
+        </div>
+	<script>
+        var setup = new ThreeSetup();
+        window.addEventListener('resize', onWindowResize, false);
+        function onWindowResize() {
+            setup.resize();
+        }
+
+        function render() {
+        
+            requestIdAnimation=requestAnimationFrame(render);
+            setup.render();
+          
+        }
+        render();
+	</script>     
+    <script src="libs/objread.js"></script>
+</body></html>
